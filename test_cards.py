@@ -1,6 +1,6 @@
 # in the line below, change cards to the name of your module
 
-from cards import Card, Deck
+from playing_cards import Card, Deck
 import pytest
 
 

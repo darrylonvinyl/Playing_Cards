@@ -1,4 +1,4 @@
-from cards import Deck
+from playing_cards import Deck
 import random
 from time import sleep
 

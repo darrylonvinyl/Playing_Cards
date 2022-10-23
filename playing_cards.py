@@ -9,11 +9,23 @@ class Card:
     def __init__(self, value, suit):
         self.value = value
         self.suit = suit
-        self.name = card_dict[value]
+        self.name = self.card_dict[value]
     
     def __str__(self):
         return f"{self.name} of {self.suit}"
     
 
 class Deck:
-    pass
+    suits = ["Spades","Clubs","Hearts","Diamonds"]
+    def __init__(self):
+        self.cards = []
+        for suit in self.suits:
+            for card in range(2,15):
+                self.cards.append(Card(card,suit))
+        shuffle(self.cards)
+    
+    def draw(self):
+        try:
+            self.cards.pop()
+        except RuntimeError:
+            print("No more cards remaining in the deck!")
